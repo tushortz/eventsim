@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Discrete Module &mdash; eventsim 0.6 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/icon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="eventsim 0.6 documentation" href="index.html"/>
+        <link rel="next" title="Randgen" href="randgen.html"/>
+        <link rel="prev" title="What’s new" href="news.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> eventsim
+        
+
+        
+          
+          <img src="_static/logo.jpg" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">What&#8217;s new</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-6">in Eventsim 0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-9">in Eventsim 0.5.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-8">in Eventsim 0.5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-7">in Eventsim 0.5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-6">in Eventsim 0.5.6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Discrete</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#calculate">Calculate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-the-calculate-class">Importing the Calculate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Result</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#trimval-and-trimlist">trimval and trimlist</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importing-the-methods">Importing the methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1-using-trimval">Example 1 (Using trimval)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2-using-trimlist">Example 2 (Using trimlist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="randgen.html">Randgen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="randgen.html#generate">Generate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#importing-the-generate-class">Importing the Generate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-1a">Example 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-1a">Result 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-1b">Example 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-1b">Result 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-2a">Example 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-2a">Result 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-2b">Example 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-2b">Result 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-3a">Example 3a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-3a">Result 3a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-3b">Example 3b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-3b">Result 3b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-4a">Example 4a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-4a">Result 4a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-4b">Example 4b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-4b">Result 4b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-5a">Example 5a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-5a">Result 5a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-5b">Example 5b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-5b">Result 5b</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simevent.html">Simevent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simevent.html#randomsim">Randomsim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#importing-the-randomsim-class">Importing the Randomsim class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1a">Example 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1a">Result 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1b">Example 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1b">Result 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1c">Example 1c</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1c">Result 1c</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1d">Example 1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1d">Result 1d</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simevent.html#simulate">Simulate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#id1">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#importing-the-simulate-class">Importing the Simulate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-2a">Example 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-2a">Result 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-2b">Example 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-2b">Result 2b</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simevent.html#simtable">Simtable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#id2">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#importing-the-simtable-class">Importing the Simtable class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-3">Example 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result">Result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">eventsim</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Discrete Module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="discrete">
+<h1>Discrete<a class="headerlink" href="#discrete" title="Permalink to this headline">¶</a></h1>
+<p>The Discrete module has a <strong>Calculate</strong> class, <strong>trimval</strong> and <strong>trimlist</strong> method</p>
+<div class="section" id="calculate">
+<h2>Calculate<a class="headerlink" href="#calculate" title="Permalink to this headline">¶</a></h2>
+<p><strong>Calculate</strong> has six methods for calculating/generating <code class="docutils literal"><span class="pre">probability</span></code>, <code class="docutils literal"><span class="pre">estimated</span> <span class="pre">variance</span></code>, <code class="docutils literal"><span class="pre">estimated</span> <span class="pre">mean</span></code>, <code class="docutils literal"><span class="pre">estimated</span> <span class="pre">standard</span> <span class="pre">deviation</span></code>, <code class="docutils literal"><span class="pre">expectation</span> <span class="pre">value</span></code> and <code class="docutils literal"><span class="pre">discreteEmp</span></code>.</p>
+<p>Discrete&#8217;s &#8220;<cite>Calculate</cite> class&#8221; takes <cite>two arguments</cite>: <code class="docutils literal"><span class="pre">outcome</span></code> and <code class="docutils literal"><span class="pre">cummulative</span> <span class="pre">probability</span></code> or a third optional argument which is <cite>amount of times to be generated</cite> (<code class="docutils literal"><span class="pre">steps</span></code>).</p>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>Calculate methods are:</p>
+<ul class="simple">
+<li>prob() &#8212;-&gt; To calculate the probability based on the given outcome list(second argument of the <strong>Calculate</strong> instance).</li>
+<li>discreteemp() &#8212;-&gt; To generate a random outcome depending on its probability of occurrence.</li>
+<li>expectval() &#8212;-&gt; To generate an expectation value i.e. the mean of the outcome depending on its probability</li>
+<li>estmean() &#8212;-&gt; Same as expectval() because they always give the same output.</li>
+<li>estvar() &#8212;-&gt; To calculate the estimated variance of the list data</li>
+<li>eststddev &#8212;-&gt; To calculate the estimated standard deviation of the list data</li>
+</ul>
+</div>
+<div class="section" id="importing-the-calculate-class">
+<h3>Importing the Calculate class<a class="headerlink" href="#importing-the-calculate-class" title="Permalink to this headline">¶</a></h3>
+<p>You can import the Calculate class in three ways:</p>
+<div class="sidebar">
+<p class="first sidebar-title">Note</p>
+<p class="last">The highlighted code for importing should be used along with the highlighted code for creating an instance of the class (usage). Both way of creating an instance can take two or three arguments.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">eventsim.discrete</span> 
+<span class="hll"><span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="n">Calculate</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="o">*</span>
+</span></pre></div>
+</div>
+<p>and you can then respectively use it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">eventsim</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">Calculate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="hll"><span class="n">sample</span> <span class="o">=</span> <span class="n">Calculate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="example-1">
+<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Two arguments</strong>
+Usage: Calculate(<strong>outcome list</strong>, <strong>cummulative probability list</strong>)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="n">Calculate</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">sample</span> <span class="o">=</span> <span class="n">Calculate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">prob</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;DiscreteEmp:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">discreteemp</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Expectation value:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">expectval</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Estimated Mean:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">estmean</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Estimated Variance:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">estvar</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Estimated Standard deviation:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">eststddev</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result">
+<h3>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+<span class="n">DiscreteEmp</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Expectation</span> <span class="n">value</span><span class="p">:</span> <span class="mf">2.0</span>
+<span class="n">Estimated</span> <span class="n">Mean</span><span class="p">:</span> <span class="mf">2.0</span>
+<span class="n">Estimated</span> <span class="n">Variance</span><span class="p">:</span> <span class="mf">3.6</span>
+<span class="n">Estimated</span> <span class="n">Standard</span> <span class="n">deviation</span><span class="p">:</span> <span class="mf">1.8974</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2">
+<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<p><strong>three arguments</strong></p>
+<p>Usage: Calculate(<strong>outcome list</strong>, <strong>cummulative probability list</strong>, &#8220;<cite>Optional: amount/steps</cite>&#8221;)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">eventsim.discrete</span> 
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">sample</span> <span class="o">=</span> <span class="n">eventsim</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">Calculate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">prob</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;DiscreteEmp:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">discreteemp</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Expectation value:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">expectval</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Estimated Mean:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">estmean</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Estimated Variance:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">estvar</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Estimated Standard deviation:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">eststddev</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Result<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+<span class="n">DiscreteEmp</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Expectation</span> <span class="n">value</span><span class="p">:</span> <span class="mf">20.0</span>
+<span class="n">Estimated</span> <span class="n">Mean</span><span class="p">:</span> <span class="mf">20.0</span>
+<span class="n">Estimated</span> <span class="n">Variance</span><span class="p">:</span> <span class="mf">36.0</span>
+<span class="n">Estimated</span> <span class="n">Standard</span> <span class="n">deviation</span><span class="p">:</span> <span class="mf">6.0</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>argument one</strong> of the Calculate class should be the <strong>outcome</strong> list while <strong>argument two</strong> should be the <strong>cummulative probability</strong> list. <strong>Argument three (steps)</strong> is optional and only needed if any of the data is to be calculated after a certain number of times or to generate a list of discreteEmp values.</p>
+<p class="last">If no optional argument is given (same as if an optional argument is set to 1), discreteemp will generate only one outcome but if more the optional argument is more than one e.g. 5, then <em>discreteemp</em> will generate a list containing several generated outcomes (5 items in a list in this case).</p>
+</div>
+</div>
+</div>
+<div class="section" id="trimval-and-trimlist">
+<h2>trimval and trimlist<a class="headerlink" href="#trimval-and-trimlist" title="Permalink to this headline">¶</a></h2>
+<p><strong>trimval</strong> is a <cite>discrete</cite> module method that takes in one argument, (numbers or lists and strips it of leading zeros and round up to 4 decimal places. If more than one argument is given, none of the other arguments after the first would remain unchanged but no error would be raised.</p>
+<p><strong>trimlist</strong> on the other takes as many arguments as possibe and does the same thing <strong>trimval</strong> does but it&#8217;s very useful if there is a nested list in the list of arguments. It is also very useful than trimval because it alter&#8217;s all the arguments even to the first nested list of any of the arguments.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>It originally wasn&#8217;t meant to be included in the module but because I used it a lot, I decided to include it in case.</cite></p>
+</div>
+<p>They both help to display lists and numbers in a better and easier way to read rather than have values with many leading decimal numbers in a list keeping it concise.</p>
+<div class="section" id="importing-the-methods">
+<h3>Importing the methods<a class="headerlink" href="#importing-the-methods" title="Permalink to this headline">¶</a></h3>
+<p>They can be imported similar to the Calculate class. in any of the three ways.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="kn">import</span> <span class="nn">eventsim.discrete</span> 
+</span><span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="n">trimval</span>
+<span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="n">trimlist</span>
+<span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>and you can then respectively use it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.00647886</span><span class="p">,</span> <span class="mf">6543.23456</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="hll"><span class="k">print</span><span class="p">(</span><span class="n">eventsim</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">trimval</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+</span><span class="k">print</span><span class="p">(</span><span class="n">trimlist</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1-using-trimval">
+<h3>Example 1 (Using trimval)<a class="headerlink" href="#example-1-using-trimval" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.00647886</span><span class="p">,</span> <span class="mf">6543.23456</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">trimval</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+
+<span class="hll"><span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.00647886</span><span class="p">,</span> <span class="mf">6543.23456</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mf">12.87532</span>
+</span><span class="hll"><span class="k">print</span><span class="p">(</span><span class="n">trimval</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Result<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="mf">12.0065</span><span class="p">,</span> <span class="mf">6543.2346</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="hll"><span class="p">([</span><span class="mf">12.00647886</span><span class="p">,</span> <span class="mf">6543.23456</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mf">12.87532</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The last highlighted result was not completely changed because <strong>trimval</strong> only works on the first argument. Use <strong>trimlist</strong> if this is the case.</p>
+</div>
+</div>
+<div class="section" id="example-2-using-trimlist">
+<h3>Example 2 (Using trimlist)<a class="headerlink" href="#example-2-using-trimlist" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.discrete</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="hll"><span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">12.063506</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;cat&quot;</span><span class="p">,</span> <span class="mf">56.000001</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">9.046376</span><span class="p">]</span> <span class="p">]</span> <span class="p">]</span>
+</span><span class="hll"><span class="k">print</span><span class="p">(</span><span class="n">trimlist</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">12.063506</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;cat&quot;</span><span class="p">,</span> <span class="mf">56.000001</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">9.03479</span><span class="p">]</span> <span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">trimlist</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Result<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">12.064</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="mf">56.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">9.046376</span><span class="p">]]]</span>
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">12.064</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="mf">56.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">9.035</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>trimlist</strong> can only trim values up to and including one nested list and does not affect lists nested two levels within each other</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="randgen.html" class="btn btn-neutral float-right" title="Randgen" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="news.html" class="btn btn-neutral" title="What’s new" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Taiwo Kareem.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

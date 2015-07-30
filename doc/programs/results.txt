@@ -1,0 +1,163 @@
+discrete.Calculate
+Results
+
+# No optional Argument
+Probability: [0.1, 0.3, 0.3, 0.3]
+DiscreteEmp: 3
+Expectation value: 2.0
+Estimated Mean: 2.0
+Estimated Variance: 3.6
+Estimated Standard deviation: 1.8974
+
+# Optional Argument
+Probability: [0.1, 0.3, 0.3, 0.3]
+DiscreteEmp: [3, 0, 4, 4, 4, 4, 3, 0, 0, 0]
+Expectation value: 20.0
+Estimated Mean: 20.0
+Estimated Variance: 36.0
+Estimated Standard deviation: 6.0
+
+
+discrete.trimval
+[12.0065, 6543.2346, 9]
+([12.00647886, 6543.23456, 9], 12.87532)
+([53.00647886, 2], 4.908, 'cat', [4, [5.98753]])
+
+
+discrete.trimlist
+[1, 12.064, ['cat', 56.0, 2, [7, 9.046376]]]
+[1, 12.064, ['cat', 56.0, 2, 9.035]]
+
+
+generate()
+Outcome: [10, 4, 0, 5, 5, 2, 8, 4]
+Unique Outcome: [10, 4, 0, 5, 2, 8]
+Occurrence: [1, 2, 1, 2, 1, 1]
+Probability: [0.25, 0.5, 0.25, 0.5, 0.25, 0.25]
+Cummulative Probability: [0.25, 0.75, 1.0, 1.5, 1.75, 1.0]
+
+generate("r")
+Outcome: [5, 3, 2, 2, 1]
+Unique Outcome: [5, 3, 2, 1]
+Occurrence: [1, 1, 2, 1]
+Probability: [0.2, 0.2, 0.4, 0.2]
+Cummulative Probability: [0.2, 0.4, 0.8, 1.0]
+
+Generate(8)
+Outcome: [8, 4, 8, 1, 2, 9, 2, 9]
+Unique Outcome: [8, 4, 1, 2, 9]
+Occurrence: [2, 1, 1, 2, 2]
+Probability: [0.25, 0.125, 0.125, 0.25, 0.25]
+Cummulative Probability: [0.25, 0.375, 0.5, 0.75, 1.0]
+
+Generate(10, "s")
+Outcome: [0, 1, 1, 1, 3, 4, 7, 7, 9, 10]
+Unique Outcome: [0, 1, 3, 4, 7, 9, 10]
+Occurrence: [1, 3, 1, 1, 2, 1, 1]
+Probability: [0.1, 0.3, 0.1, 0.1, 0.2, 0.1, 0.1]
+Cummulative Probability: [0.1, 0.4, 0.5, 0.6, 0.8, 0.9, 1.0]
+
+Generate(3, 7)
+Outcome: [4, 7, 7, 4, 3, 3, 4, 4]
+Unique Outcome: [4, 7, 3]
+Occurrence: [4, 2, 2]
+Probability: [0.5, 0.25, 0.25]
+Cummulative Probability: [0.5, 0.75, 1.0]
+
+Generate(2, 6, "r")
+Outcome: [6, 5, 5, 5, 4, 4, 4, 4, 2, 2]
+Unique Outcome: [6, 5, 4, 2]
+Occurrence: [1, 3, 4, 2]
+Probability: [0.1, 0.3, 0.4, 0.2]
+Cummulative Probability: [0.1, 0.4, 0.8, 1.0]
+
+Generate(2, 5, 7)
+Outcome: [5, 5, 4, 4, 4, 2, 3]
+Unique Outcome: [5, 4, 2, 3]
+Occurrence: [2, 3, 1, 1]
+Probability: [0.2857, 0.4286, 0.1429, 0.1429]
+Cummulative Probability: [0.2857, 0.7143, 0.8572, 1.0]
+
+Generate(2, 5, 7, "s")
+Outcome: [2, 3, 3, 4, 4, 5, 5]
+Unique Outcome: [2, 3, 4, 5]
+Occurrence: [1, 2, 2, 2]
+Probability: [0.1429, 0.2857, 0.2857, 0.2857]
+Cummulative Probability: [0.1429, 0.4286, 0.7143, 1.0]
+
+Generate(2, 20, 3, 10)
+Outcome: [20, 8, 11, 5, 11, 17, 20, 17, 14, 20]
+Unique Outcome: [20, 8, 11, 5, 17, 14]
+Occurrence: [3, 1, 2, 1, 2, 1]
+Probability: [0.3, 0.1, 0.2, 0.1, 0.2, 0.1]
+Cummulative Probability: [0.3, 0.4, 0.6, 0.7, 0.9, 1.0]
+
+Generate(2, 20, 3, 10, "r")
+Outcome: [20, 20, 20, 17, 14, 11, 8, 5, 2, 2]
+Unique Outcome: [20, 17, 14, 11, 8, 5, 2]
+Occurrence: [3, 1, 1, 1, 1, 1, 2]
+Probability: [0.3, 0.1, 0.1, 0.1, 0.1, 0.1, 0.2]
+Cummulative Probability: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0]
+
+Randomsim()
+Inter-arrival time: [0, 8, 4, 10, 1]
+Arrival time: [0, 8, 12, 22, 23]
+Service time: [2, 9, 4, 5, 5]
+Time when Service begins: [0, 8, 17, 22, 27]
+Time when Service ends: [2, 17, 21, 27, 32]
+Time customer spends waiting in Queue: [0, 0, 5, 0, 4]
+Time customer spends in system: [2, 9, 9, 5, 9]
+Idle time of server: [0, 6, 0, 1, 0]
+
+eventsim.simevent.Randomsim(6)
+Inter-arrival time: [0, 4, 10, 9, 1, 9]
+Arrival time: [0, 4, 14, 23, 24, 33]
+Service time: [4, 10, 1, 8, 10, 5]
+Time when Service begins: [0, 4, 14, 23, 31, 41]
+Time when Service ends: [4, 14, 15, 31, 41, 46]
+Time customer spends waiting in Queue: [0, 0, 0, 0, 7, 8]
+Time customer spends in system: [4, 10, 1, 8, 17, 13]
+Idle time of server: [0, 0, 0, 8, 0, 0]
+
+simevent.Randomsim(4,6)
+Inter-arrival time: [0, 1, 2, 2, 2, 4]
+Arrival time: [0, 1, 3, 5, 7, 11]
+Service time: [1, 2, 1, 4, 2, 4]
+Time when Service begins: [0, 1, 3, 5, 9, 11]
+Time when Service ends: [1, 3, 4, 9, 11, 15]
+Time customer spends waiting in Queue: [0, 0, 0, 0, 2, 0]
+Time customer spends in system: [1, 2, 1, 4, 4, 4]
+Idle time of server: [0, 0, 0, 1, 0, 0]
+
+simevent.Randomsim(4, 6, 8)
+Inter-arrival time: [0, 3, 2, 2, 3, 3, 3, 4]
+Arrival time: [0, 3, 5, 7, 10, 13, 16, 20]
+Service time: [6, 2, 2, 2, 4, 5, 6, 4]
+Time when Service begins: [0, 6, 8, 10, 12, 16, 21, 27]
+Time when Service ends: [6, 8, 10, 12, 16, 21, 27, 31]
+Time customer spends waiting in Queue: [0, 3, 3, 3, 2, 3, 5, 7]
+Time customer spends in system: [6, 5, 5, 5, 6, 8, 11, 11]
+Idle time of server: [0, 0, 0, 0, 0, 0, 0, 0]
+
+simevent.Simulate([7, 9, 6]
+Inter-arrival time: [7, 9, 6]
+Arrival time: [7, 16, 22]
+Service time: [2, 5, 1]
+Time when Service begins: [7, 16, 22]
+Time when Service ends: [9, 21, 23]
+Time customer spends waiting in Queue: [0, 0, 0]
+Time customer spends in system: [2, 5, 1]
+Idle time of server: [0, 7, 1]
+
+simevent.Simulate([0, 5, 6, 3, 7, 9, 3], [4, 7, 2, 1, 3, 11, 7])
+Inter-arrival time: [0, 5, 6, 3, 7, 9, 3]
+Arrival time: [0, 5, 11, 14, 21, 30, 33]
+Service time: [4, 7, 2, 1, 3, 11, 7]
+Time when Service begins: [0, 5, 12, 14, 21, 30, 41]
+Time when Service ends: [4, 12, 14, 15, 24, 41, 48]
+Time customer spends waiting in Queue: [0, 0, 1, 0, 0, 0, 8]
+Time customer spends in system: [4, 7, 3, 1, 3, 11, 15]
+Idle time of server: [0, 1, 0, 0, 6, 6, 0]
+
+sampletable = Simtable(sample, Tk())
+sampletable.drawtable()

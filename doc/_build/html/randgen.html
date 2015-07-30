@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Randgen Module &mdash; eventsim 0.6 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/icon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="eventsim 0.6 documentation" href="index.html"/>
+        <link rel="next" title="Simevent" href="simevent.html"/>
+        <link rel="prev" title="Discrete" href="discrete.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> eventsim
+        
+
+        
+          
+          <img src="_static/logo.jpg" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">What&#8217;s new</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-6">in Eventsim 0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-9">in Eventsim 0.5.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-8">in Eventsim 0.5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-7">in Eventsim 0.5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-6">in Eventsim 0.5.6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete.html">Discrete</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete.html#calculate">Calculate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#importing-the-calculate-class">Importing the Calculate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#result">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#id1">Result</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="discrete.html#trimval-and-trimlist">trimval and trimlist</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#importing-the-methods">Importing the methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-1-using-trimval">Example 1 (Using trimval)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#id2">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-2-using-trimlist">Example 2 (Using trimlist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#id3">Result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Randgen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generate">Generate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-the-generate-class">Importing the Generate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1a">Example 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-1a">Result 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1b">Example 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-1b">Result 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2a">Example 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-2a">Result 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2b">Example 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-2b">Result 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-3a">Example 3a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-3a">Result 3a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-3b">Example 3b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-3b">Result 3b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-4a">Example 4a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-4a">Result 4a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-4b">Example 4b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-4b">Result 4b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-5a">Example 5a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-5a">Result 5a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-5b">Example 5b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-5b">Result 5b</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simevent.html">Simevent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simevent.html#randomsim">Randomsim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#importing-the-randomsim-class">Importing the Randomsim class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1a">Example 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1a">Result 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1b">Example 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1b">Result 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1c">Example 1c</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1c">Result 1c</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-1d">Example 1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-1d">Result 1d</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simevent.html#simulate">Simulate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#id1">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#importing-the-simulate-class">Importing the Simulate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-2a">Example 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-2a">Result 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-2b">Example 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result-2b">Result 2b</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simevent.html#simtable">Simtable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#id2">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#importing-the-simtable-class">Importing the Simtable class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#example-3">Example 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simevent.html#result">Result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">eventsim</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Randgen Module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="randgen">
+<h1>Randgen<a class="headerlink" href="#randgen" title="Permalink to this headline">¶</a></h1>
+<p>The Randgen module has a <strong>Generate</strong> class</p>
+<div class="section" id="generate">
+<h2>Generate<a class="headerlink" href="#generate" title="Permalink to this headline">¶</a></h2>
+<p><strong>Generate</strong> takes integer values as arguments (from <cite>no arguments</cite> up to and including <cite>five arguments</cite>) with optional <cite>string</cite> arguments being <strong>&#8220;r&#8221;</strong> or <strong>&#8220;s&#8221;</strong>. <strong>r</strong> for <strong>reverse(descending order)</strong> sorting and <strong>s</strong> for <strong>ascending order</strong> sorting. It has five methods which can be called on its instance namely:</p>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>outcome() &#8212;-&gt; generate outcomes based on the inputs supplied as arguments.</li>
+<li>unique() &#8212;-&gt; generate unique outcomes based on the inputs supplied as arguments. You can think of it as a <em>set</em> of the outcome() method result.</li>
+<li>occur() &#8212;-&gt; generate the number of times a unique item is found.</li>
+<li>getprob() &#8212;-&gt; generate the probability of the outcome with respect to the unique outcome.</li>
+<li>getcum() &#8212;-&gt; generate the cummulative probability of occurrence with respect to the unique outcome.</li>
+</ul>
+</div>
+<div class="section" id="importing-the-generate-class">
+<h3>Importing the Generate class<a class="headerlink" href="#importing-the-generate-class" title="Permalink to this headline">¶</a></h3>
+<p>You can import the Generate class in three ways:</p>
+<div class="sidebar">
+<p class="first sidebar-title">Note</p>
+<p class="last">The highlighted code for importing should be used along with the highlighted code for creating an instance of the class (usage). Both way of creating an instance takes the same amount of arguments.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">eventsim.randgen</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">eventsim.randgen</span> <span class="kn">import</span> <span class="n">Generate</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">eventsim.randgen</span> <span class="kn">import</span> <span class="o">*</span>
+</span></pre></div>
+</div>
+<p>and you can then respectively use it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">eventsim</span><span class="o">.</span><span class="n">randgen</span><span class="o">.</span><span class="n">Generate</span><span class="p">()</span>
+<span class="hll"><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p>The following examples will cover how arguments are used in the Generate class. In the examples, we assume that the class has been imported first as</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.randgen</span> <span class="kn">import</span> <span class="n">Generate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1a">
+<h3>Example 1a<a class="headerlink" href="#example-1a" title="Permalink to this headline">¶</a></h3>
+<p><strong>zero arguments</strong></p>
+<p>What this does is populate the outcome list with random values (between 0 and 10) the default amount of times (i.e. a random number between 2 and 20).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-1a">
+<h3>Result 1a<a class="headerlink" href="#result-1a" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1b">
+<h3>Example 1b<a class="headerlink" href="#example-1b" title="Permalink to this headline">¶</a></h3>
+<p><strong>Optional string argument</strong></p>
+<p>Usage: Generate (&#8216;optional: <strong>sort</strong> &#8216;)</p>
+<p>Adding an optional string argument <em>&#8220;r&#8221;</em> will <em>sort</em> the <em>outcome</em> in <em>descending</em> order whereas using the <em>&#8220;s&#8221;</em> string argument will <em>sort</em> the <em>outcome</em> in <em>ascending</em> order</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-1b">
+<h3>Result 1b<a class="headerlink" href="#result-1b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2a">
+<h3>Example 2a<a class="headerlink" href="#example-2a" title="Permalink to this headline">¶</a></h3>
+<p><strong>one argument</strong></p>
+<p>Usage: Generate (<strong>amount</strong>)</p>
+<p>What this does is populate the outcome list with random values (between 0 and 10) the amount of times specified in the argument. For example if 10 was specified in the argument, it will populate the outcome list with values ten times</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-2a">
+<h3>Result 2a<a class="headerlink" href="#result-2a" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.125</span><span class="p">,</span> <span class="mf">0.125</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.375</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2b">
+<h3>Example 2b<a class="headerlink" href="#example-2b" title="Permalink to this headline">¶</a></h3>
+<p><strong>Optional string argument</strong></p>
+<p>Usage: Generate (<strong>amount</strong>, &#8216;optional: <strong>sort</strong>&#8216;)</p>
+<p>Adding an optional string argument <em>&#8220;r&#8221;</em> will <em>sort</em> the <em>outcome</em> in <em>descending</em> order whereas using the <em>&#8220;s&#8221;</em> string argument will <em>sort</em> the <em>outcome</em> in <em>ascending</em> order</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s">&quot;s&quot;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-2b">
+<h3>Result 2b<a class="headerlink" href="#result-2b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3a">
+<h3>Example 3a<a class="headerlink" href="#example-3a" title="Permalink to this headline">¶</a></h3>
+<p><strong>two arguments</strong></p>
+<p>Usage: Generate (<strong>start</strong>, <strong>stop</strong>)</p>
+<p>What this does is populate the outcome list with values (between argument one and argument two) the default amount of times (i.e. a random number between 2 and 20).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-3a">
+<h3>Result 3a<a class="headerlink" href="#result-3a" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3b">
+<h3>Example 3b<a class="headerlink" href="#example-3b" title="Permalink to this headline">¶</a></h3>
+<p><strong>Optional string argument</strong></p>
+<p>Usage: Generate (<strong>start</strong>, <strong>stop</strong>, &#8216;optional: <strong>sort</strong> &#8216;)</p>
+<p>Adding an optional string argument <em>&#8220;r&#8221;</em> will <em>sort</em> the <em>outcome</em> in <em>descending</em> order whereas using the <em>&#8220;s&#8221;</em> string argument will <em>sort</em> the <em>outcome</em> in <em>ascending</em> order</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-3b">
+<h3>Result 3b<a class="headerlink" href="#result-3b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-4a">
+<h3>Example 4a<a class="headerlink" href="#example-4a" title="Permalink to this headline">¶</a></h3>
+<p><strong>three arguments</strong></p>
+<p>Usage: Generate (<strong>start</strong>, <strong>stop</strong>, <strong>amount</strong>)</p>
+<p>What this does is populate the outcome list with values (between argument one and argument two) the amount of times supplied in argument three. i.e. if 4 was supplied as the third argument, there will be four values in the outcome list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-4a">
+<h3>Result 4a<a class="headerlink" href="#result-4a" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2857</span><span class="p">,</span> <span class="mf">0.4286</span><span class="p">,</span> <span class="mf">0.1429</span><span class="p">,</span> <span class="mf">0.1429</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2857</span><span class="p">,</span> <span class="mf">0.7143</span><span class="p">,</span> <span class="mf">0.8572</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-4b">
+<h3>Example 4b<a class="headerlink" href="#example-4b" title="Permalink to this headline">¶</a></h3>
+<p><strong>Optional string argument</strong></p>
+<p>Usage: Generate (<strong>start</strong>, <strong>stop</strong>, <strong>amount</strong>, &#8216;optional: <strong>sort</strong> &#8216;)</p>
+<p>Adding an optional string argument <em>&#8220;r&#8221;</em> will <em>sort</em> the <em>outcome</em> in <em>descending</em> order whereas using the <em>&#8220;s&#8221;</em> string argument will <em>sort</em> the <em>outcome</em> in <em>ascending</em> order</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s">&quot;s&quot;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-4b">
+<h3>Result 4b<a class="headerlink" href="#result-4b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1429</span><span class="p">,</span> <span class="mf">0.2857</span><span class="p">,</span> <span class="mf">0.2857</span><span class="p">,</span> <span class="mf">0.2857</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1429</span><span class="p">,</span> <span class="mf">0.4286</span><span class="p">,</span> <span class="mf">0.7143</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-5a">
+<h3>Example 5a<a class="headerlink" href="#example-5a" title="Permalink to this headline">¶</a></h3>
+<p><strong>four arguments</strong></p>
+<p>Usage: Generate (<strong>start</strong>, <strong>stop</strong>, <strong>step</strong>, <strong>amount</strong>)</p>
+<p>What this does is populate the outcome list with values (between argument one and argument two) in steps of argument three value the amount of times in argument four&#8217;s value.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-5a">
+<h3>Result 5a<a class="headerlink" href="#result-5a" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-5b">
+<h3>Example 5b<a class="headerlink" href="#example-5b" title="Permalink to this headline">¶</a></h3>
+<p><strong>Optional string argument</strong></p>
+<p>Usage: Generate (<strong>start</strong>, <strong>stop</strong>, <strong>step</strong>, <strong>amount</strong>, &#8216;optional: <strong>sort</strong> &#8216;)</p>
+<p>Adding an optional string argument <em>&#8220;r&#8221;</em> will <em>sort</em> the <em>outcome</em> in <em>descending</em> order whereas using the <em>&#8220;s&#8221;</em> string argument will <em>sort</em> the <em>outcome</em> in <em>ascending</em> order</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Generate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Unique Outcome:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Occurrence:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">occur</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getprob</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Cummulative Probability:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">getcum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-5b">
+<h3>Result 5b<a class="headerlink" href="#result-5b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Unique</span> <span class="n">Outcome</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Occurrence</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="n">Cummulative</span> <span class="n">Probability</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="simevent.html" class="btn btn-neutral float-right" title="Simevent" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="discrete.html" class="btn btn-neutral" title="Discrete" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Taiwo Kareem.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

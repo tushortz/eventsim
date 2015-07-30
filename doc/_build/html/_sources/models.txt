@@ -1,0 +1,54 @@
+.. eventsim documentation master file, created by
+   sphinx-quickstart on Sun Jul  5 21:39:27 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+
+.. toctree::
+   :maxdepth: 2
+
+
+.. title:: Models
+
+
+Models
+======
+The Models' module contains six methods for calculating/generating ``probability``, ``estimated variance``, ``estimated mean``, ``estimated standard deviation``, ``expectation value`` and ``discreteEmp`` 
+
+Models' methods take mostly two arguments: ``outcome`` and ``cummulative probability`` but some methods (with asterisks) take ``optional arguments`` which is `amount of times to be generated`.
+
+To use the models module, you need to first import it as will be shown later. The model module has six methods which are:
+
+discreteemp :sup:`*`
+--------------------
+The discrete method takes two or three arguments: **outcomes**, **cummulative probability**, and an optional **amount to generate**. This is then used to generate a random outcome if only two arguments are supplied and a list of outcomes depending on the amount supplied as the third optional argument. 
+
+importing and usage
+^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: ./programs/models.py
+    :language: python
+    :lines: 1-6
+
+You could also import all the modules
+.. .. code-block:: python
+..    :emphasize-lines: 3,5
+
+..    def some_function():
+..        interesting = False
+..        print 'This line is highlighted.'
+..        print 'This one is not...'
+..        print '...but this one is.'
+
+Example
+^^^^^^^
+.. literalinclude:: ./programs/models.py
+      :language: python
+      :lines: 4
+
+.. .. sidebar:: Sidebar Title
+..    :subtitle: Optional Sidebar Subtitle
+
+..    .. code::
+     
+..      Hello
+

@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simevent Module &mdash; eventsim 0.6 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/icon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="eventsim 0.6 documentation" href="index.html"/>
+        <link rel="prev" title="Randgen" href="randgen.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> eventsim
+        
+
+        
+          
+          <img src="_static/logo.jpg" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="news.html">What&#8217;s new</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-6">in Eventsim 0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-9">in Eventsim 0.5.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-8">in Eventsim 0.5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-7">in Eventsim 0.5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news.html#in-eventsim-0-5-6">in Eventsim 0.5.6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete.html">Discrete</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete.html#calculate">Calculate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#importing-the-calculate-class">Importing the Calculate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#result">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#id1">Result</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="discrete.html#trimval-and-trimlist">trimval and trimlist</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#importing-the-methods">Importing the methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-1-using-trimval">Example 1 (Using trimval)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#id2">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#example-2-using-trimlist">Example 2 (Using trimlist)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete.html#id3">Result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="randgen.html">Randgen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="randgen.html#generate">Generate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#importing-the-generate-class">Importing the Generate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-1a">Example 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-1a">Result 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-1b">Example 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-1b">Result 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-2a">Example 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-2a">Result 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-2b">Example 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-2b">Result 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-3a">Example 3a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-3a">Result 3a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-3b">Example 3b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-3b">Result 3b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-4a">Example 4a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-4a">Result 4a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-4b">Example 4b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-4b">Result 4b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-5a">Example 5a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-5a">Result 5a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#example-5b">Example 5b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="randgen.html#result-5b">Result 5b</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Simevent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#randomsim">Randomsim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-the-randomsim-class">Importing the Randomsim class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1a">Example 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-1a">Result 1a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1b">Example 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-1b">Result 1b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1c">Example 1c</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-1c">Result 1c</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1d">Example 1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-1d">Result 1d</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simulate">Simulate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-the-simulate-class">Importing the Simulate class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2a">Example 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-2a">Result 2a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2b">Example 2b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-2b">Result 2b</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simtable">Simtable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-the-simtable-class">Importing the Simtable class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-3">Example 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result">Result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">eventsim</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Simevent Module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="simevent">
+<h1>Simevent<a class="headerlink" href="#simevent" title="Permalink to this headline">¶</a></h1>
+<p>The Simevent module has three classes namely: <strong>Randomsim</strong>, <strong>Simulate</strong> and <strong>Simtable</strong>. They are all used to simulate discrete events e.g. in a workplace scenario.</p>
+<div class="section" id="randomsim">
+<h2>Randomsim<a class="headerlink" href="#randomsim" title="Permalink to this headline">¶</a></h2>
+<p><strong>Randomsim</strong> helps to quickly simulate and generate a scenario with random values by just passing your desired argument values into it. It takes between 0 to 3 arguments. The generated results are then stored into the inter-arrival time and service time list needed to generate the rest of the values.</p>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>This class has eight methods that can be called on its instance namely:</p>
+<ul class="simple">
+<li>intarrival() &#8212;-&gt; Displays the inter-arrival time in a list.</li>
+<li>arrival() &#8212;-&gt; Displays the arrival time in a list.</li>
+<li>service() &#8212;-&gt; Displays the service time in a list.</li>
+<li>servbegin() &#8212;-&gt; Display the time service begins in a list.</li>
+<li>servend() &#8212;-&gt; Display the time service ends in a list.</li>
+<li>queuewait() &#8212;-&gt; Display the time the customer spent waiting in a list.</li>
+<li>custspend() &#8212;-&gt; Display the time the customer spent in the system i.e. total time of service.</li>
+<li>idle() &#8212;&gt; Display the idle time of the server (cashier).</li>
+</ul>
+</div>
+<div class="section" id="importing-the-randomsim-class">
+<h3>Importing the Randomsim class<a class="headerlink" href="#importing-the-randomsim-class" title="Permalink to this headline">¶</a></h3>
+<p>You can import the Randomsim class in three ways:</p>
+<div class="sidebar">
+<p class="first sidebar-title">Note</p>
+<p class="last">The highlighted code for importing should be used along with the highlighted code for creating an instance of the class (usage). Both way of creating an instance takes the same amount of arguments.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">eventsim.simevent</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="n">Randomsim</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="o">*</span>
+</span></pre></div>
+</div>
+<p>and you can then respectively use it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">eventsim</span><span class="o">.</span><span class="n">simevent</span><span class="o">.</span><span class="n">Randomsim</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="hll"><span class="n">sample</span> <span class="o">=</span> <span class="n">Randomsim</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>The following examples will cover how arguments are used in the Randomsim class. In the examples, we assume that the class has been imported first as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="n">Randomsim</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1a">
+<h3>Example 1a<a class="headerlink" href="#example-1a" title="Permalink to this headline">¶</a></h3>
+<p><strong>zero arguments</strong></p>
+<p>What this does is populate the inter-arrival and service time list with random numbers (between 1 and 10) random amount of times (2 to 20). The first value of the inter-arrival time defaults to 0.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Randomsim</span><span class="p">()</span>
+ 
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Inter-arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">intarrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">arrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Service time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">service</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service begins:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servbegin</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service ends:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends waiting in Queue:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">queuewait</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends in system:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">custspend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Idle time of server:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">idle</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-1a">
+<h3>Result 1a<a class="headerlink" href="#result-1a" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Inter</span><span class="o">-</span><span class="n">arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+<span class="n">Service</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">begins</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">ends</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="n">waiting</span> <span class="ow">in</span> <span class="n">Queue</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="ow">in</span> <span class="n">system</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">Idle</span> <span class="n">time</span> <span class="n">of</span> <span class="n">server</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1b">
+<h3>Example 1b<a class="headerlink" href="#example-1b" title="Permalink to this headline">¶</a></h3>
+<p><strong>one argument</strong></p>
+<p>Usage: Randomsim(<strong>list size</strong>)</p>
+<p>What this does is populate the inter-arrival and service time list with random numbers (between 1 and 10) the amount of times supplied as the only argument value. The first value of the inter-arrival time defaults to 0.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Randomsim</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+ 
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Inter-arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">intarrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">arrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Service time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">service</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service begins:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servbegin</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service ends:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends waiting in Queue:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">queuewait</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends in system:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">custspend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Idle time of server:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">idle</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-1b">
+<h3>Result 1b<a class="headerlink" href="#result-1b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Inter</span><span class="o">-</span><span class="n">arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">Arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
+<span class="n">Service</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">begins</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">ends</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">46</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="n">waiting</span> <span class="ow">in</span> <span class="n">Queue</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="ow">in</span> <span class="n">system</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="n">Idle</span> <span class="n">time</span> <span class="n">of</span> <span class="n">server</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1c">
+<h3>Example 1c<a class="headerlink" href="#example-1c" title="Permalink to this headline">¶</a></h3>
+<p><strong>two arguments</strong></p>
+<p>Usage: Randomsim(<strong>max value</strong>, <strong>list size</strong>)</p>
+<p>What this does is populate the inter-arrival and service time list with numbers not more than the first argument starting from 1. The list is populated the amount of times specified as the second argument.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Randomsim</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+ 
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Inter-arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">intarrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">arrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Service time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">service</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service begins:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servbegin</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service ends:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends waiting in Queue:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">queuewait</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends in system:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">custspend</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-1c">
+<h3>Result 1c<a class="headerlink" href="#result-1c" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Inter</span><span class="o">-</span><span class="n">arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">Service</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">begins</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">ends</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="n">waiting</span> <span class="ow">in</span> <span class="n">Queue</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="ow">in</span> <span class="n">system</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Idle</span> <span class="n">time</span> <span class="n">of</span> <span class="n">server</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1d">
+<h3>Example 1d<a class="headerlink" href="#example-1d" title="Permalink to this headline">¶</a></h3>
+<p><strong>three arguments</strong></p>
+<p>Usage: Randomsim(<strong>max value for inter-arrival time</strong>, <strong>max value for service time</strong>, <strong>list size</strong>)</p>
+<p>What this does is populate the inter-arrival with numbers between 1 and the value passed into the first argument, service time is populated with values between 1 and the second argument while the third argument is the amount/size of the two lists.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Randomsim</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+ 
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Inter-arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">intarrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">arrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Service time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">service</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service begins:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servbegin</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service ends:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends waiting in Queue:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">queuewait</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends in system:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">custspend</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-1d">
+<h3>Result 1d<a class="headerlink" href="#result-1d" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Inter</span><span class="o">-</span><span class="n">arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">Service</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">begins</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">ends</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="n">waiting</span> <span class="ow">in</span> <span class="n">Queue</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="ow">in</span> <span class="n">system</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">Idle</span> <span class="n">time</span> <span class="n">of</span> <span class="n">server</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="simulate">
+<h2>Simulate<a class="headerlink" href="#simulate" title="Permalink to this headline">¶</a></h2>
+<p><strong>Simulate</strong> helps to quickly simulate and generate a scenario with user-defined values. It is more flexible in that it allows you to input your own data rather than input just numbers as compared to <strong>Randomsim</strong>. It can take one or two arguments which are inter-arrival time list and service time list. They must be of the same length.</p>
+<div class="section" id="id1">
+<h3>Methods<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This class has eight methods (same as <cite>Randomsim</cite>) that can be called on its instance namely:</p>
+<ul class="simple">
+<li>intarrival() &#8212;-&gt; Displays the inter-arrival time in a list.</li>
+<li>arrival() &#8212;-&gt; Displays the arrival time in a list.</li>
+<li>service() &#8212;-&gt; Displays the service time in a list.</li>
+<li>servbegin() &#8212;-&gt; Display the time service begins in a list.</li>
+<li>servend() &#8212;-&gt; Display the time service ends in a list.</li>
+<li>queuewait() &#8212;-&gt; Display the time the customer spent waiting in a list.</li>
+<li>custspend() &#8212;-&gt; Display the time the customer spent in the system i.e. total time of service.</li>
+<li>idle() &#8212;&gt; Display the idle time of the server (cashier).</li>
+</ul>
+</div>
+<div class="section" id="importing-the-simulate-class">
+<h3>Importing the Simulate class<a class="headerlink" href="#importing-the-simulate-class" title="Permalink to this headline">¶</a></h3>
+<p>You can import the Simulate class in three ways:</p>
+<div class="sidebar">
+<p class="first sidebar-title">Note</p>
+<p class="last">The highlighted code for importing should be used along with the highlighted code for creating an instance of the class (usage). Both way of creating an instance takes the same amount of arguments.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">eventsim.simevent</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="n">Simulate</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="o">*</span>
+</span></pre></div>
+</div>
+<p>and you can then respectively use it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">eventsim</span><span class="o">.</span><span class="n">simevent</span><span class="o">.</span><span class="n">Simulate</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="hll"><span class="n">sample</span> <span class="o">=</span> <span class="n">Simulate</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</span></pre></div>
+</div>
+<p>The following examples will cover how arguments are used in the Simulate class. In the examples, we assume that the class has been imported first as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="n">Simulate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2a">
+<h3>Example 2a<a class="headerlink" href="#example-2a" title="Permalink to this headline">¶</a></h3>
+<p><strong>one argument</strong></p>
+<p>Usage: Simulate(<strong>inter-arrival list</strong>)</p>
+<p>What this does is populate the inter-arrival time with the user-defined argument (<strong>must be a list</strong>) and service time would be automatically generated (populated with numbers between 1 and 10 with the same size as inter-arrival time).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Simulate</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+ 
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Inter-arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">intarrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">arrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Service time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">service</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service begins:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servbegin</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service ends:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends waiting in Queue:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">queuewait</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends in system:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">custspend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Idle time of server:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">idle</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-2a">
+<h3>Result 2a<a class="headerlink" href="#result-2a" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Inter</span><span class="o">-</span><span class="n">arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">Arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<span class="n">Service</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">begins</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">ends</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="n">waiting</span> <span class="ow">in</span> <span class="n">Queue</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="ow">in</span> <span class="n">system</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">Idle</span> <span class="n">time</span> <span class="n">of</span> <span class="n">server</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2b">
+<h3>Example 2b<a class="headerlink" href="#example-2b" title="Permalink to this headline">¶</a></h3>
+<p><strong>two arguments</strong></p>
+<p>Usage: Randomsim(<strong>inter-arrival list</strong>, <strong>service time list</strong>)</p>
+<p>What this does is populate the inter-arrival with the first list argument and the service time with the second argument which is then used to calcuate the the rest.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Simulate</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Inter-arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">intarrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Arrival time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">arrival</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Service time:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">service</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service begins:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servbegin</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time when Service ends:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">servend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends waiting in Queue:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">queuewait</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Time customer spends in system:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">custspend</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Idle time of server:&quot;</span><span class="p">,</span><span class="n">sample</span><span class="o">.</span><span class="n">idle</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result-2b">
+<h3>Result 2b<a class="headerlink" href="#result-2b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Inter</span><span class="o">-</span><span class="n">arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">Arrival</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
+<span class="n">Service</span> <span class="n">time</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">begins</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">when</span> <span class="n">Service</span> <span class="n">ends</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">48</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="n">waiting</span> <span class="ow">in</span> <span class="n">Queue</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">Time</span> <span class="n">customer</span> <span class="n">spends</span> <span class="ow">in</span> <span class="n">system</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="n">Idle</span> <span class="n">time</span> <span class="n">of</span> <span class="n">server</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="simtable">
+<h2>Simtable<a class="headerlink" href="#simtable" title="Permalink to this headline">¶</a></h2>
+<p><strong>Simtable</strong> is used to display generated results in a tabled format using the tkinter module.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>First of all make sure you have <strong>tkinter or Tkinter</strong> installed (Mostly always comes with your python distribution).
+It is advisable to use the <strong>import *</strong> statement if you want to use the Simtable class because of the difference in the old and new tkinter module. If you used the <cite>import *</cite> mentioned previously, the program will try to fix this problem for you. Otherwise, make sure you have imported tkinter or Tkinter (whichever works). or use this:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>this should be sufficient to use the table but remember you also need to create an instance of your generated outcome from the <strong>Randomsim</strong> or <strong>Simulate</strong> <cite>class</cite> which can then be passed as the first argument of <strong>Simtable</strong>.</p>
+<p>But if you aren&#8217;t satisfied with the above code or you still get an error, try this:</p>
+<blockquote class="last">
+<div><blockquote>
+<div><div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="n">Simtable</span>
+<span class="c">#Import any other class you want to use here (either Randomsim or simulate)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>			<span class="c">#for python 3</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">Tkinter</span> <span class="kn">import</span> <span class="o">*</span>			<span class="c">#   for</span>
+    <span class="kn">from</span> <span class="nn">ttk</span> <span class="kn">import</span> <span class="o">*</span> 				<span class="c"># python 2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h3>Methods<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>This class has only one method <strong>drawtable()</strong> for representing data in a table.</p>
+</div>
+<div class="section" id="importing-the-simtable-class">
+<h3>Importing the Simtable class<a class="headerlink" href="#importing-the-simtable-class" title="Permalink to this headline">¶</a></h3>
+<p>You can import the Simtable class in three ways but the third one is the <cite>recommended method</cite>. That way importing the <cite>tkinter</cite> module is not really needed:</p>
+<div class="sidebar">
+<p class="first sidebar-title">Note</p>
+<p class="last">The highlighted code for importing should be used along with the highlighted code for creating an instance of the class (usage). Both way of creating an instance takes the same amount of arguments.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">eventsim.simevent</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="n">Simtable</span>
+</span><span class="hll"><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="o">*</span>
+</span></pre></div>
+</div>
+<p>and you can then respectively use it like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sampletable</span> <span class="o">=</span> <span class="n">eventsim</span><span class="o">.</span><span class="n">simevent</span><span class="o">.</span><span class="n">Simtable</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">Tk</span><span class="p">())</span>
+<span class="hll"><span class="n">sampletable</span> <span class="o">=</span> <span class="n">Simtable</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">Tk</span><span class="p">())</span>
+</span></pre></div>
+</div>
+<p>The following example will cover how arguments are used in the Simulate class. In the example, we assume that the class has been imported first as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">eventsim.simevent</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3">
+<h3>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h3>
+<p>Usage: Simtable(<strong>classInstance</strong>, <strong>parent</strong>)</p>
+<p><cite>where parent must always be Tk()</cite></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sample</span> <span class="o">=</span> <span class="n">Simulate</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+
+<span class="n">sampletable</span> <span class="o">=</span> <span class="n">Simtable</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">Tk</span><span class="p">())</span>
+<span class="n">sampletable</span><span class="o">.</span><span class="n">drawtable</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="result">
+<h3>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h3>
+<img alt="Simulation table display" src="_images/simtable.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Just like the above eample, you can also use it on both the Randomsim and Simulate class instance the same way. sampletable is just an instance of the Simtable and can be any values. In brief, sampletable is an instance of Simtable that takes an instance of any other simevent class as the first argument and Tk() as the second argument.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="randgen.html" class="btn btn-neutral" title="Randgen" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Taiwo Kareem.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
